@@ -43,7 +43,7 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txfPrecio = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
         cbxTipo = new javax.swing.JComboBox<>();
@@ -69,6 +69,11 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         txfModelo.setForeground(new java.awt.Color(153, 153, 153));
         txfModelo.setText("Ingresa el modelo");
         txfModelo.setBorder(null);
+        txfModelo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txfModeloMousePressed(evt);
+            }
+        });
         add(txfModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 160, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 160, 10));
 
@@ -80,6 +85,11 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         txfNumero.setForeground(new java.awt.Color(153, 153, 153));
         txfNumero.setText("Ingresa el numero");
         txfNumero.setBorder(null);
+        txfNumero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txfNumeroMousePressed(evt);
+            }
+        });
         add(txfNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 160, 20));
         add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 223, 160, 10));
 
@@ -92,6 +102,11 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         txfColor.setText("Ingresa el color");
         txfColor.setBorder(null);
         txfColor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txfColor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txfColorMousePressed(evt);
+            }
+        });
         add(txfColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 160, -1));
         add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 160, -1));
 
@@ -111,10 +126,15 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         jLabel5.setText("Precio");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 70, 20));
 
-        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setText("Introduce el precio");
-        jTextField1.setBorder(null);
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 170, -1));
+        txfPrecio.setForeground(new java.awt.Color(153, 153, 153));
+        txfPrecio.setText("Introduce el precio");
+        txfPrecio.setBorder(null);
+        txfPrecio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txfPrecioMousePressed(evt);
+            }
+        });
+        add(txfPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 170, -1));
         add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 170, 10));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -158,6 +178,59 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         
     }//GEN-LAST:event_pnlAnadirSeleccionadoMouseExited
 
+    private void txfModeloMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txfModeloMousePressed
+       
+        if(txfModelo.getText().equals("Ingresa el modelo")){
+        txfModelo.setText("");
+        txfModelo.setForeground(Color.BLACK);
+        }
+        if(txfNumero.getText().isEmpty()){
+        txfNumero.setText("Ingresa el numero");
+        txfNumero.setForeground(Color.GRAY);
+        }
+        if(txfColor.getText().isEmpty()){
+        txfColor.setText("Ingresa el color");
+        txfColor.setForeground(Color.GRAY);
+        }
+        if(txfPrecio.getText().isEmpty()){
+        txfPrecio.setText("Ingresa el precio");
+        txfPrecio.setForeground(Color.GRAY);
+        }
+    }//GEN-LAST:event_txfModeloMousePressed
+
+    private void txfNumeroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txfNumeroMousePressed
+        txfModelo.setText("Ingresa el modelo");
+        txfModelo.setForeground(Color.GRAY);
+        txfNumero.setText("");
+        txfNumero.setForeground(Color.BLACK);
+        txfColor.setText("Ingresa el color");
+        txfColor.setForeground(Color.GRAY);
+        txfPrecio.setText("Ingresa el precio");
+        txfPrecio.setForeground(Color.GRAY);
+    }//GEN-LAST:event_txfNumeroMousePressed
+
+    private void txfColorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txfColorMousePressed
+        txfModelo.setText("Ingresa el modelo");
+        txfModelo.setForeground(Color.GRAY);
+        txfNumero.setText("Ingresa el numero");
+        txfNumero.setForeground(Color.GRAY);
+        txfColor.setText("");
+        txfColor.setForeground(Color.BLACK);
+        txfPrecio.setText("Ingresa el precio");
+        txfPrecio.setForeground(Color.GRAY);
+    }//GEN-LAST:event_txfColorMousePressed
+
+    private void txfPrecioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txfPrecioMousePressed
+        txfModelo.setText("Ingresa el modelo");
+        txfModelo.setForeground(Color.GRAY);
+        txfNumero.setText("Ingresa el numero");
+        txfNumero.setForeground(Color.GRAY);
+        txfColor.setText("Ingresa el color");
+        txfColor.setForeground(Color.GRAY);
+        txfPrecio.setText("");
+        txfPrecio.setForeground(Color.BLACK);
+    }//GEN-LAST:event_txfPrecioMousePressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JComboBox<String> cbxTipo;
@@ -175,11 +248,11 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JTextField jTextField1;
     public static javax.swing.JLabel lblAnadir;
     private javax.swing.JPanel pnlAnadirSeleccionado;
     private javax.swing.JTextField txfColor;
     private javax.swing.JTextField txfModelo;
     private javax.swing.JTextField txfNumero;
+    private javax.swing.JTextField txfPrecio;
     // End of variables declaration//GEN-END:variables
 }
