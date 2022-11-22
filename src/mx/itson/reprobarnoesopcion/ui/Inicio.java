@@ -37,6 +37,7 @@ public class Inicio extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -87,6 +88,9 @@ public class Inicio extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Añadir Modelo");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 270, 50));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/Logo zapateria von azul.png"))); // NOI18N
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 155, 36));
     }// </editor-fold>//GEN-END:initComponents
 
     private void pnlInicioAnadirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlInicioAnadirMouseClicked
@@ -122,6 +126,7 @@ public class Inicio extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel pnlInicioAnadir;
     private javax.swing.JPanel pnlInicioBuscar;
