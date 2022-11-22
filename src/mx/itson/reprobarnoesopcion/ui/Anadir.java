@@ -18,6 +18,7 @@ public class Anadir extends javax.swing.JPanel {
      */
     public Anadir() {
         initComponents();
+        AnadirSeleccionado anadirSeleccion = new AnadirSeleccionado();
     }
 
     /**
@@ -147,6 +148,9 @@ public class Anadir extends javax.swing.JPanel {
 
     private void pnlTeniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTeniMouseClicked
         
+        AnadirSeleccionado anadirSeleccion = new AnadirSeleccionado();
+        anadirSeleccion.lblAnadir.setText("Añadir Teni");
+        
         AnadirSeleccionado p5 = new AnadirSeleccionado();
         p5.setSize(730, 420);
         p5.setLocation(0,0);
@@ -159,6 +163,9 @@ public class Anadir extends javax.swing.JPanel {
     }//GEN-LAST:event_pnlTeniMouseClicked
 
     private void pnlZapatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlZapatoMouseClicked
+        
+        AnadirSeleccionado anadirSeleccion = new AnadirSeleccionado();
+        anadirSeleccion.lblAnadir.setText("Añadir Zapato");
         
         AnadirSeleccionado p5 = new AnadirSeleccionado();
         p5.setSize(730, 420);
@@ -173,6 +180,9 @@ public class Anadir extends javax.swing.JPanel {
 
     private void pnlZapatillaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlZapatillaMouseClicked
         
+        AnadirSeleccionado anadirSeleccion = new AnadirSeleccionado();
+        anadirSeleccion.lblAnadir.setText("Añadir Zapatilla");
+        
         AnadirSeleccionado p5 = new AnadirSeleccionado();
         p5.setSize(730, 420);
         p5.setLocation(0,0);
@@ -185,6 +195,9 @@ public class Anadir extends javax.swing.JPanel {
     }//GEN-LAST:event_pnlZapatillaMouseClicked
 
     private void pnlHuaracheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlHuaracheMouseClicked
+        
+        AnadirSeleccionado anadirSeleccion = new AnadirSeleccionado();
+        anadirSeleccion.lblAnadir.setText("Añadir Huarache");
         
         AnadirSeleccionado p5 = new AnadirSeleccionado();
         p5.setSize(730, 420);

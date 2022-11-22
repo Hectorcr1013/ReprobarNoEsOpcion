@@ -35,7 +35,7 @@ public class Vendido extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Vendido");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 337, 198, 59));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 198, 59));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/Logo zapateria von azul.png"))); // NOI18N
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 155, 36));

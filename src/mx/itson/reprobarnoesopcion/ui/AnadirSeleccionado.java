@@ -27,16 +27,38 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel6 = new javax.swing.JLabel();
+        lblAnadir = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txfModelo = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/Logo zapateria von azul.png"))); // NOI18N
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 155, 36));
+
+        lblAnadir.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        lblAnadir.setForeground(new java.awt.Color(0, 0, 0));
+        add(lblAnadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 400, 70));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Modelo");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 90, 30));
+
+        txfModelo.setForeground(new java.awt.Color(0, 0, 0));
+        txfModelo.setBorder(null);
+        add(txfModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 160, -1));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 160, 10));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JSeparator jSeparator1;
+    public static javax.swing.JLabel lblAnadir;
+    private javax.swing.JTextField txfModelo;
     // End of variables declaration//GEN-END:variables
 }
