@@ -8,12 +8,12 @@ package mx.itson.reprobarnoesopcion.ui;
  *
  * @author Hector
  */
-public class Anadir extends javax.swing.JPanel {
+public class AnadirSeleccionado extends javax.swing.JPanel {
 
     /**
-     * Creates new form Anadir
+     * Creates new form AnadirSeleccionado
      */
-    public Anadir() {
+    public AnadirSeleccionado() {
         initComponents();
     }
 
@@ -26,19 +26,11 @@ public class Anadir extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Añadir");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 118, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -480,7 +480,7 @@ public class Main extends javax.swing.JFrame {
      * Se utilizará para cuando esté seleccionado un panel del menu en el ui principal
      * @param panel Nombre del panel que queramos establecerle el color
      */
-    void setColor(JPanel panel){
+    public void setColor(JPanel panel){
         panel.setBackground(new Color(21,101,192));
     }
     
@@ -489,7 +489,7 @@ public class Main extends javax.swing.JFrame {
      * Se ultilizará para cuando se deje de seleccionar un panel del menú en el ui principal
      * @param panel Nombre del panel que queramos establecerle el color
      */
-    void resetColor(JPanel panel){
+    public void resetColor(JPanel panel){
         panel.setBackground(new Color(18,90,173));
     }
     
@@ -542,15 +542,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel lblExit;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblZapateriaVon;
-    private javax.swing.JPanel pnlAnadir;
+    public static javax.swing.JPanel pnlAnadir;
     private javax.swing.JPanel pnlBarra;
-    private javax.swing.JPanel pnlBuscar;
+    public static javax.swing.JPanel pnlBuscar;
     private javax.swing.JPanel pnlEncabezado;
     private javax.swing.JPanel pnlExit;
     private javax.swing.JPanel pnlFondo;
-    private javax.swing.JPanel pnlInicio;
+    public static javax.swing.JPanel pnlInicio;
     public static javax.swing.JPanel pnlJFrames;
     private javax.swing.JPanel pnlMenu;
-    private javax.swing.JPanel pnlVendido;
+    public static javax.swing.JPanel pnlVendido;
     // End of variables declaration//GEN-END:variables
 }

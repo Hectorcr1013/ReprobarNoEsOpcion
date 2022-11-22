@@ -4,6 +4,9 @@
  */
 package mx.itson.reprobarnoesopcion.ui;
 
+import java.awt.BorderLayout;
+import static mx.itson.reprobarnoesopcion.ui.Main.pnlJFrames;
+
 /**
  *
  * @author Hector
@@ -27,33 +30,100 @@ public class Inicio extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        pnlInicioAnadir = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        pnlInicioBuscar = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Inicio");
+        jLabel1.setText("Seleccionar accion");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 430, -1));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 420, 10));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(249, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(174, 174, 174))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(165, 165, 165)
-                .addComponent(jLabel1)
-                .addContainerGap(191, Short.MAX_VALUE))
-        );
+        pnlInicioAnadir.setBackground(new java.awt.Color(255, 255, 255));
+        pnlInicioAnadir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        pnlInicioAnadir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlInicioAnadir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlInicioAnadirMouseClicked(evt);
+            }
+        });
+        pnlInicioAnadir.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/anadir (1).png"))); // NOI18N
+        pnlInicioAnadir.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 140, 190));
+
+        add(pnlInicioAnadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 210, 190));
+
+        pnlInicioBuscar.setBackground(new java.awt.Color(255, 255, 255));
+        pnlInicioBuscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        pnlInicioBuscar.setForeground(new java.awt.Color(0, 0, 0));
+        pnlInicioBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlInicioBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlInicioBuscarMouseClicked(evt);
+            }
+        });
+        pnlInicioBuscar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/lupa.png"))); // NOI18N
+        pnlInicioBuscar.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 163, 184));
+
+        add(pnlInicioBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 210, 190));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Buscar Modelo");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 260, 50));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Añadir Modelo");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 270, 50));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pnlInicioAnadirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlInicioAnadirMouseClicked
+       Anadir p2 = new Anadir();
+        p2.setSize(730, 420);
+        p2.setLocation(0,0);
+        
+        pnlJFrames.removeAll();
+        pnlJFrames.add(p2, BorderLayout.CENTER);
+        pnlJFrames.revalidate();
+        pnlJFrames.repaint();
+    }//GEN-LAST:event_pnlInicioAnadirMouseClicked
+
+    private void pnlInicioBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlInicioBuscarMouseClicked
+        
+        Buscar p2 = new Buscar();
+        p2.setSize(730, 420);
+        p2.setLocation(0,0);
+        
+        pnlJFrames.removeAll();
+        pnlJFrames.add(p2, BorderLayout.CENTER);
+        pnlJFrames.revalidate();
+        pnlJFrames.repaint();
+        
+        
+        
+    }//GEN-LAST:event_pnlInicioBuscarMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel pnlInicioAnadir;
+    private javax.swing.JPanel pnlInicioBuscar;
     // End of variables declaration//GEN-END:variables
 }
