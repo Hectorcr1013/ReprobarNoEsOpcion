@@ -4,6 +4,8 @@
  */
 package mx.itson.reprobarnoesopcion.ui;
 
+import java.awt.Color;
+
 /**
  *
  * @author Hector
@@ -56,6 +58,7 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
 
         lblAnadir.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lblAnadir.setForeground(new java.awt.Color(0, 0, 0));
+        lblAnadir.setText("Añadir");
         add(lblAnadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 400, 70));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -124,6 +127,14 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
 
         pnlAnadirSeleccionado.setBackground(new java.awt.Color(21, 101, 192));
         pnlAnadirSeleccionado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlAnadirSeleccionado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlAnadirSeleccionadoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlAnadirSeleccionadoMouseExited(evt);
+            }
+        });
         pnlAnadirSeleccionado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -134,6 +145,18 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
 
         add(pnlAnadirSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 150, 50));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pnlAnadirSeleccionadoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAnadirSeleccionadoMouseEntered
+        
+        pnlAnadirSeleccionado.setBackground(new Color(21,101,192));
+        
+    }//GEN-LAST:event_pnlAnadirSeleccionadoMouseEntered
+
+    private void pnlAnadirSeleccionadoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAnadirSeleccionadoMouseExited
+        
+        pnlAnadirSeleccionado.setBackground(new Color(18,90,173));
+        
+    }//GEN-LAST:event_pnlAnadirSeleccionadoMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
