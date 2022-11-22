@@ -31,6 +31,22 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         txfModelo = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        txfNumero = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        txfColor = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
+        cbxTipo = new javax.swing.JComboBox<>();
+        pnlAnadirSeleccionado = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -40,25 +56,107 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
 
         lblAnadir.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lblAnadir.setForeground(new java.awt.Color(0, 0, 0));
-        add(lblAnadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 400, 70));
+        add(lblAnadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 400, 70));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Modelo");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 90, 30));
 
-        txfModelo.setForeground(new java.awt.Color(0, 0, 0));
+        txfModelo.setForeground(new java.awt.Color(153, 153, 153));
+        txfModelo.setText("Ingresa el modelo");
         txfModelo.setBorder(null);
         add(txfModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 160, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 160, 10));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Numero");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 80, 20));
+
+        txfNumero.setForeground(new java.awt.Color(153, 153, 153));
+        txfNumero.setText("Ingresa el numero");
+        txfNumero.setBorder(null);
+        add(txfNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 160, 20));
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 223, 160, 10));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Color");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 60, 20));
+
+        txfColor.setForeground(new java.awt.Color(153, 153, 153));
+        txfColor.setText("Ingresa el color");
+        txfColor.setBorder(null);
+        txfColor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        add(txfColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 160, -1));
+        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 160, -1));
+
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 30, 270));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Sexo");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, 60, 20));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dama", "Caballero", "Unisex" }));
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 90, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Precio");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 70, 20));
+
+        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField1.setText("Introduce el precio");
+        jTextField1.setBorder(null);
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 170, -1));
+        add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 170, 10));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Tipo");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 70, 20));
+
+        cbxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teni", "Zapato", "Zapatilla", "Huarache" }));
+        add(cbxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 90, -1));
+
+        pnlAnadirSeleccionado.setBackground(new java.awt.Color(21, 101, 192));
+        pnlAnadirSeleccionado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlAnadirSeleccionado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Añadir");
+        pnlAnadirSeleccionado.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 110, 30));
+
+        add(pnlAnadirSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 150, 50));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JComboBox<String> cbxTipo;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextField jTextField1;
     public static javax.swing.JLabel lblAnadir;
+    private javax.swing.JPanel pnlAnadirSeleccionado;
+    private javax.swing.JTextField txfColor;
     private javax.swing.JTextField txfModelo;
+    private javax.swing.JTextField txfNumero;
     // End of variables declaration//GEN-END:variables
 }

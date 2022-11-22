@@ -147,10 +147,7 @@ public class Anadir extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void pnlTeniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTeniMouseClicked
-        
-        AnadirSeleccionado anadirSeleccion = new AnadirSeleccionado();
-        anadirSeleccion.lblAnadir.setText("Añadir Teni");
-        
+            
         AnadirSeleccionado p5 = new AnadirSeleccionado();
         p5.setSize(730, 420);
         p5.setLocation(0,0);
@@ -159,13 +156,14 @@ public class Anadir extends javax.swing.JPanel {
         pnlJFrames.add(p5, BorderLayout.CENTER);
         pnlJFrames.revalidate();
         pnlJFrames.repaint();
+        
+        p5.lblAnadir.setText("Añadir Teni");
+        p5.cbxTipo.setSelectedItem("Teni");
         
     }//GEN-LAST:event_pnlTeniMouseClicked
 
     private void pnlZapatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlZapatoMouseClicked
-        
-        AnadirSeleccionado anadirSeleccion = new AnadirSeleccionado();
-        anadirSeleccion.lblAnadir.setText("Añadir Zapato");
+
         
         AnadirSeleccionado p5 = new AnadirSeleccionado();
         p5.setSize(730, 420);
@@ -175,13 +173,14 @@ public class Anadir extends javax.swing.JPanel {
         pnlJFrames.add(p5, BorderLayout.CENTER);
         pnlJFrames.revalidate();
         pnlJFrames.repaint();
+        
+        p5.lblAnadir.setText("Añadir Zapato");
+        p5.cbxTipo.setSelectedItem("Zapato");
         
     }//GEN-LAST:event_pnlZapatoMouseClicked
 
     private void pnlZapatillaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlZapatillaMouseClicked
-        
-        AnadirSeleccionado anadirSeleccion = new AnadirSeleccionado();
-        anadirSeleccion.lblAnadir.setText("Añadir Zapatilla");
+    
         
         AnadirSeleccionado p5 = new AnadirSeleccionado();
         p5.setSize(730, 420);
@@ -191,13 +190,14 @@ public class Anadir extends javax.swing.JPanel {
         pnlJFrames.add(p5, BorderLayout.CENTER);
         pnlJFrames.revalidate();
         pnlJFrames.repaint();
+        
+        p5.lblAnadir.setText("Añadir Zapatilla");
+        p5.cbxTipo.setSelectedItem("Zapatilla");
         
     }//GEN-LAST:event_pnlZapatillaMouseClicked
 
     private void pnlHuaracheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlHuaracheMouseClicked
         
-        AnadirSeleccionado anadirSeleccion = new AnadirSeleccionado();
-        anadirSeleccion.lblAnadir.setText("Añadir Huarache");
         
         AnadirSeleccionado p5 = new AnadirSeleccionado();
         p5.setSize(730, 420);
@@ -207,6 +207,9 @@ public class Anadir extends javax.swing.JPanel {
         pnlJFrames.add(p5, BorderLayout.CENTER);
         pnlJFrames.revalidate();
         pnlJFrames.repaint();
+        
+        p5.lblAnadir.setText("Añadir Huarache");
+        p5.cbxTipo.setSelectedItem("Huarache");
         
     }//GEN-LAST:event_pnlHuaracheMouseClicked
 
