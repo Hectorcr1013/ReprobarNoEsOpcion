@@ -10,13 +10,19 @@ import java.time.LocalDate;
 import javax.swing.JPanel;
 
 /**
- *
- * @author Hector
+ * Ui principal donde en la que contendrá todo el contenido del proyecto y creará una ventana donde veremos el proyecto 
+ * El contenido del proyectó será sobre un almacen de zapatos para una zapateria
+ * @author Hector Cardenas
  */
 public class Main extends javax.swing.JFrame {
 
     int xMouse, yMouse;
     
+    /**
+     * En este metodo iniciamos el ui e inicializamos al arrancar el proyecto algunas variables 
+     * para obtener la fecha actual y mostrarla en el proyecto en el ui principal.
+     * Tambien empezará con el panel de inicio al arrancar el programa.
+     */
     public Main() {
         initComponents();
         
@@ -28,7 +34,6 @@ public class Main extends javax.swing.JFrame {
             ,"Octubre","Noviembre","Diciemrbre"};
         lblFecha.setText("Hoy es "+dia+" de "+meses[mes - 1]+" de "+anio);
         
-        
         Inicio p1 = new Inicio();
         p1.setSize(730, 420);
         p1.setLocation(0,0);
@@ -37,7 +42,6 @@ public class Main extends javax.swing.JFrame {
         pnlJFrames.add(p1, BorderLayout.CENTER);
         pnlJFrames.revalidate();
         pnlJFrames.repaint();
-        
         
     }
 
@@ -63,7 +67,9 @@ public class Main extends javax.swing.JFrame {
         pnlBuscar = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
+        pnlVendido = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         pnlBarra = new javax.swing.JPanel();
         pnlExit = new javax.swing.JPanel();
         lblExit = new javax.swing.JLabel();
@@ -151,6 +157,12 @@ public class Main extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnlBuscarMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlBuscarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlBuscarMouseExited(evt);
+            }
         });
         pnlBuscar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -164,9 +176,29 @@ public class Main extends javax.swing.JFrame {
 
         pnlMenu.add(pnlBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 250, 50));
 
-        jPanel8.setBackground(new java.awt.Color(18, 90, 173));
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        pnlMenu.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 250, 50));
+        pnlVendido.setBackground(new java.awt.Color(18, 90, 173));
+        pnlVendido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlVendidoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlVendidoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlVendidoMouseExited(evt);
+            }
+        });
+        pnlVendido.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Vendidos");
+        pnlVendido.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 80, 30));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/dolar.png"))); // NOI18N
+        pnlVendido.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
+
+        pnlMenu.add(pnlVendido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 250, 50));
 
         pnlFondo.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 670));
 
@@ -326,11 +358,14 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_lblExitMouseClicked
 
     private void pnlInicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlInicioMouseEntered
-        setBackground(Color.getHSBColor(211,79,75)); 
+         if(pnlInicio.getBackground().getRGB() == -15574355)
+            setColor(pnlInicio);
     }//GEN-LAST:event_pnlInicioMouseEntered
 
     private void pnlInicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlInicioMouseExited
-        setBackground(Color.getHSBColor(212,89,67));
+        if(pnlAnadir.getBackground().getRGB() != -15574355 || pnlVendido.getBackground().getRGB() != -15574355
+            || pnlBuscar.getBackground().getRGB() != -15574355 )
+            resetColor(pnlInicio);
     }//GEN-LAST:event_pnlInicioMouseExited
 
     private void pnlAnadirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAnadirMouseEntered
@@ -339,6 +374,11 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlAnadirMouseEntered
 
     private void pnlAnadirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAnadirMouseClicked
+        
+        setColor(pnlAnadir);
+        resetColor(pnlInicio);
+        resetColor(pnlVendido);
+        resetColor(pnlBuscar);
         
         Anadir p2 = new Anadir();
         p2.setSize(730, 420);
@@ -356,6 +396,12 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void pnlInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlInicioMouseClicked
+        
+        setColor(pnlInicio);
+        resetColor(pnlVendido);
+        resetColor(pnlAnadir);
+        resetColor(pnlBuscar);
+        
         Inicio p1 = new Inicio();
         p1.setSize(730, 420);
         p1.setLocation(0,0);
@@ -367,7 +413,13 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlInicioMouseClicked
 
     private void pnlBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBuscarMouseClicked
-       Buscar p3 = new Buscar();
+        
+        setColor(pnlBuscar);
+        resetColor(pnlInicio);
+        resetColor(pnlAnadir);
+        resetColor(pnlVendido);
+        
+        Buscar p3 = new Buscar();
         p3.setSize(730, 420);
         p3.setLocation(0,0);
         
@@ -378,14 +430,65 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlBuscarMouseClicked
 
     private void pnlAnadirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAnadirMouseExited
-       if(pnlInicio.getBackground().getRGB() != -15574355 || pnlAnadir.getBackground().getRGB() != -15574355
+       if(pnlInicio.getBackground().getRGB() != -15574355 || pnlVendido.getBackground().getRGB() != -15574355
             || pnlBuscar.getBackground().getRGB() != -15574355 )
             resetColor(pnlAnadir);
     }//GEN-LAST:event_pnlAnadirMouseExited
 
+    private void pnlVendidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVendidoMouseClicked
+        
+        setColor(pnlVendido);
+        resetColor(pnlInicio);
+        resetColor(pnlAnadir);
+        resetColor(pnlBuscar);
+        
+        Vendido p4 = new Vendido();
+        p4.setSize(730, 420);
+        p4.setLocation(0,0);
+        
+        pnlJFrames.removeAll();
+        pnlJFrames.add(p4, BorderLayout.CENTER);
+        pnlJFrames.revalidate();
+        pnlJFrames.repaint();
+        
+    }//GEN-LAST:event_pnlVendidoMouseClicked
+
+    private void pnlBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBuscarMouseEntered
+        if(pnlBuscar.getBackground().getRGB() == -15574355)
+            setColor(pnlBuscar);
+    }//GEN-LAST:event_pnlBuscarMouseEntered
+
+    private void pnlBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBuscarMouseExited
+       if(pnlInicio.getBackground().getRGB() != -15574355 || pnlVendido.getBackground().getRGB() != -15574355
+            || pnlAnadir.getBackground().getRGB() != -15574355 )
+            resetColor(pnlBuscar);
+    }//GEN-LAST:event_pnlBuscarMouseExited
+
+    private void pnlVendidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVendidoMouseEntered
+        if(pnlVendido.getBackground().getRGB() == -15574355)
+            setColor(pnlVendido);
+    }//GEN-LAST:event_pnlVendidoMouseEntered
+
+    private void pnlVendidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVendidoMouseExited
+        if(pnlInicio.getBackground().getRGB() != -15574355 || pnlBuscar.getBackground().getRGB() != -15574355
+            || pnlAnadir.getBackground().getRGB() != -15574355 )
+            resetColor(pnlVendido);
+    }//GEN-LAST:event_pnlVendidoMouseExited
+
+    /**
+     * Establece un panel del color rgb que pongamos
+     * Se utilizará para cuando esté seleccionado un panel del menu en el ui principal
+     * @param panel Nombre del panel que queramos establecerle el color
+     */
     void setColor(JPanel panel){
         panel.setBackground(new Color(21,101,192));
     }
+    
+    /**
+     * Establece un panel del color rgb que pongamos
+     * Se ultilizará para cuando se deje de seleccionar un panel del menú en el ui principal
+     * @param panel Nombre del panel que queramos establecerle el color
+     */
     void resetColor(JPanel panel){
         panel.setBackground(new Color(18,90,173));
     }
@@ -433,7 +536,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel8;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblExit;
     private javax.swing.JLabel lblFecha;
@@ -447,5 +551,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel pnlInicio;
     public static javax.swing.JPanel pnlJFrames;
     private javax.swing.JPanel pnlMenu;
+    private javax.swing.JPanel pnlVendido;
     // End of variables declaration//GEN-END:variables
 }
