@@ -28,6 +28,14 @@ public class Vendido extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        lblVentaDia = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblVentaMes = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lblVentaAnual = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -35,15 +43,65 @@ public class Vendido extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Vendido");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 198, 59));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 198, 59));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/Logo zapateria von azul.png"))); // NOI18N
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 155, 36));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Modelo", "Color", "Numero", "Tipo", "Precio"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 670, 220));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Ventas del dia:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 100, 20));
+
+        lblVentaDia.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblVentaDia.setForeground(new java.awt.Color(0, 0, 0));
+        add(lblVentaDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 100, 20));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Venta del mes:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 100, -1));
+
+        lblVentaMes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblVentaMes.setForeground(new java.awt.Color(0, 0, 0));
+        add(lblVentaMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 100, 20));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Venta anual:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 360, 100, -1));
+
+        lblVentaAnual.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblVentaAnual.setForeground(new java.awt.Color(0, 0, 0));
+        add(lblVentaAnual, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, 100, 20));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblVentaAnual;
+    private javax.swing.JLabel lblVentaDia;
+    private javax.swing.JLabel lblVentaMes;
     // End of variables declaration//GEN-END:variables
 }

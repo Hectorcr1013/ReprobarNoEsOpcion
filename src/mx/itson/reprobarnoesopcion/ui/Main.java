@@ -192,7 +192,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Vendidos");
+        jLabel8.setText("Vendido");
         pnlVendido.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 80, 30));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/dolar.png"))); // NOI18N
