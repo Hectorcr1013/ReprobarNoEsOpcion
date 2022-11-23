@@ -46,7 +46,7 @@ public class Inicio extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Seleccionar accion");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 430, -1));
-        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 420, 10));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 250, 10));
 
         pnlInicioAnadir.setBackground(new java.awt.Color(255, 255, 255));
         pnlInicioAnadir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -94,7 +94,7 @@ public class Inicio extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void pnlInicioAnadirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlInicioAnadirMouseClicked
-       Anadir p2 = new Anadir();
+        Anadir p2 = new Anadir();
         p2.setSize(730, 420);
         p2.setLocation(0,0);
         
@@ -102,6 +102,9 @@ public class Inicio extends javax.swing.JPanel {
         pnlJFrames.add(p2, BorderLayout.CENTER);
         pnlJFrames.revalidate();
         pnlJFrames.repaint();
+        
+        
+        
     }//GEN-LAST:event_pnlInicioAnadirMouseClicked
 
     private void pnlInicioBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlInicioBuscarMouseClicked

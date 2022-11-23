@@ -4,7 +4,9 @@
  */
 package mx.itson.reprobarnoesopcion.ui;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import static mx.itson.reprobarnoesopcion.ui.Main.pnlJFrames;
 
 /**
  *
@@ -49,6 +51,9 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         cbxTipo = new javax.swing.JComboBox<>();
         pnlAnadirSeleccionado = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        pnlAtras = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -111,7 +116,7 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 160, -1));
 
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 30, 270));
+        add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 30, 270));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -119,6 +124,7 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, 60, 20));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dama", "Caballero", "Unisex" }));
+        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 90, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -127,7 +133,7 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 70, 20));
 
         txfPrecio.setForeground(new java.awt.Color(153, 153, 153));
-        txfPrecio.setText("Introduce el precio");
+        txfPrecio.setText("Ingresa el precio");
         txfPrecio.setBorder(null);
         txfPrecio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -143,6 +149,7 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 70, 20));
 
         cbxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teni", "Zapato", "Zapatilla", "Huarache" }));
+        cbxTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(cbxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 90, -1));
 
         pnlAnadirSeleccionado.setBackground(new java.awt.Color(21, 101, 192));
@@ -164,6 +171,19 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         pnlAnadirSeleccionado.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 110, 30));
 
         add(pnlAnadirSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 150, 50));
+
+        pnlAtras.setBackground(new java.awt.Color(255, 255, 255));
+        pnlAtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlAtrasMouseClicked(evt);
+            }
+        });
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/atras (1).png"))); // NOI18N
+        pnlAtras.add(jLabel9);
+
+        add(pnlAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
+        add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 200, 0));
     }// </editor-fold>//GEN-END:initComponents
 
     private void pnlAnadirSeleccionadoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAnadirSeleccionadoMouseEntered
@@ -199,37 +219,76 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
     }//GEN-LAST:event_txfModeloMousePressed
 
     private void txfNumeroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txfNumeroMousePressed
+        
+        if(txfModelo.getText().isEmpty()){
         txfModelo.setText("Ingresa el modelo");
         txfModelo.setForeground(Color.GRAY);
+        }
+        if(txfNumero.getText().equals("Ingresa el numero")){
         txfNumero.setText("");
         txfNumero.setForeground(Color.BLACK);
+        }
+        if(txfColor.getText().isEmpty()){
         txfColor.setText("Ingresa el color");
         txfColor.setForeground(Color.GRAY);
+        }
+        if(txfPrecio.getText().isEmpty()){
         txfPrecio.setText("Ingresa el precio");
         txfPrecio.setForeground(Color.GRAY);
+        }
     }//GEN-LAST:event_txfNumeroMousePressed
 
     private void txfColorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txfColorMousePressed
+        
+        if(txfModelo.getText().isEmpty()){
         txfModelo.setText("Ingresa el modelo");
         txfModelo.setForeground(Color.GRAY);
+        }
+        if(txfNumero.getText().isEmpty()){
         txfNumero.setText("Ingresa el numero");
         txfNumero.setForeground(Color.GRAY);
+        }
+        if(txfColor.getText().equals("Ingresa el color")){
         txfColor.setText("");
         txfColor.setForeground(Color.BLACK);
+        }
+        if(txfPrecio.getText().isEmpty())
         txfPrecio.setText("Ingresa el precio");
         txfPrecio.setForeground(Color.GRAY);
     }//GEN-LAST:event_txfColorMousePressed
 
     private void txfPrecioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txfPrecioMousePressed
+        
+        if(txfModelo.getText().isEmpty()){
         txfModelo.setText("Ingresa el modelo");
         txfModelo.setForeground(Color.GRAY);
+        }
+        if(txfNumero.getText().isEmpty()){
         txfNumero.setText("Ingresa el numero");
         txfNumero.setForeground(Color.GRAY);
+        }
+        if(txfColor.getText().isEmpty()){
         txfColor.setText("Ingresa el color");
         txfColor.setForeground(Color.GRAY);
+        }
+        if(txfPrecio.getText().equals("Ingresa el precio")){
         txfPrecio.setText("");
         txfPrecio.setForeground(Color.BLACK);
+        }
     }//GEN-LAST:event_txfPrecioMousePressed
+
+    private void pnlAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAtrasMouseClicked
+        
+        Anadir p2 = new Anadir();
+        p2.setSize(730, 420);
+        p2.setLocation(0,0);
+        
+        pnlJFrames.removeAll();
+        pnlJFrames.add(p2, BorderLayout.CENTER);
+        pnlJFrames.revalidate();
+        pnlJFrames.repaint();
+        
+    }//GEN-LAST:event_pnlAtrasMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -243,13 +302,16 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     public static javax.swing.JLabel lblAnadir;
     private javax.swing.JPanel pnlAnadirSeleccionado;
+    private javax.swing.JPanel pnlAtras;
     private javax.swing.JTextField txfColor;
     private javax.swing.JTextField txfModelo;
     private javax.swing.JTextField txfNumero;

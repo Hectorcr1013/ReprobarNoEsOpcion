@@ -46,6 +46,8 @@ public class Anadir extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        pnlAtras = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/Logo zapateria von azul.png"))); // NOI18N
 
@@ -54,8 +56,8 @@ public class Anadir extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Añadir");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, -1, -1));
+        jLabel1.setText("Añadir Modelo");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, -1, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 170, 20));
 
         pnlTeni.setBackground(new java.awt.Color(255, 255, 255));
@@ -124,26 +126,38 @@ public class Anadir extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Teni");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 60, 30));
+        jLabel2.setText("Tenis");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 60, 30));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Zapato");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 90, 30));
+        jLabel3.setText("Zapatos");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 110, 30));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Zapatilla");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 110, 30));
+        jLabel4.setText("Zapatillas");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 300, 110, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Huarache");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 120, 30));
+        jLabel5.setText("Huaraches");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 120, 30));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/Logo zapateria von azul.png"))); // NOI18N
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 155, 36));
+
+        pnlAtras.setBackground(new java.awt.Color(255, 255, 255));
+        pnlAtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlAtrasMouseClicked(evt);
+            }
+        });
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/atras (1).png"))); // NOI18N
+        pnlAtras.add(jLabel12);
+
+        add(pnlAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void pnlTeniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTeniMouseClicked
@@ -213,11 +227,25 @@ public class Anadir extends javax.swing.JPanel {
         
     }//GEN-LAST:event_pnlHuaracheMouseClicked
 
+    private void pnlAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAtrasMouseClicked
+
+        Inicio p1 = new Inicio();
+        p1.setSize(730, 420);
+        p1.setLocation(0,0);
+
+        pnlJFrames.removeAll();
+        pnlJFrames.add(p1, BorderLayout.CENTER);
+        pnlJFrames.revalidate();
+        pnlJFrames.repaint();
+
+    }//GEN-LAST:event_pnlAtrasMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -227,6 +255,7 @@ public class Anadir extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel pnlAtras;
     private javax.swing.JPanel pnlHuarache;
     private javax.swing.JPanel pnlTeni;
     private javax.swing.JPanel pnlZapatilla;
