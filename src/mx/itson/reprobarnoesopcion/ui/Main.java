@@ -8,6 +8,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.time.LocalDate;
 import javax.swing.JPanel;
+import mx.itson.reprobarnoesopcion.persistencia.Conexion;
 
 /**
  * Ui principal donde en la que contendrá todo el contenido del proyecto y creará una ventana donde veremos el proyecto 
@@ -25,6 +26,8 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        Conexion.obtener();
+        setLocationRelativeTo(null);
         
         LocalDate hoy = LocalDate.now();
         int anio = hoy.getYear();

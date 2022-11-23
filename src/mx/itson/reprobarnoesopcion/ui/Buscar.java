@@ -63,13 +63,13 @@ public class Buscar extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Modelo", "Color", "Numero", "Tipo", "Precio"
+                "Modelo", "Color", "Numero", "Tipo", "Sexo", "Precio"
             }
         ));
         jScrollPane1.setViewportView(jTable1);

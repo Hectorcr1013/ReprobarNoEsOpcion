@@ -13,14 +13,18 @@ import java.sql.DriverManager;
  */
 public class Conexion {
     
+    /**
+     * Obtiene una conexión hacia la base de datos utilizando los parámetros proporcionados.
+     * @return La conexión inicializada hacia la base de datos.
+     */
     public static Connection obtener(){
         
         Connection conexion = null;
         
         try {
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost/ReprobarNoEsOpcion?user=root&password=1323");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/ReprobarNoEsOpcion", "root", "1323");
         } catch (Exception e) {
-            System.out.println("Ocurrio un error"+e);
+            System.out.println("Ocurrio un error al conectar a la base de datos: "+e);
         }
         
         return conexion;
