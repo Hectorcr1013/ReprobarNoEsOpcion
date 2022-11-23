@@ -180,6 +180,7 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         });
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/atras (1).png"))); // NOI18N
+        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnlAtras.add(jLabel9);
 
         add(pnlAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));

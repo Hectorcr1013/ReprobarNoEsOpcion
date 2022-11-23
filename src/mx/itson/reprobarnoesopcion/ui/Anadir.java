@@ -148,6 +148,7 @@ public class Anadir extends javax.swing.JPanel {
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 155, 36));
 
         pnlAtras.setBackground(new java.awt.Color(255, 255, 255));
+        pnlAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnlAtras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnlAtrasMouseClicked(evt);
