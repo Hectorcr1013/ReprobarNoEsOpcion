@@ -9,6 +9,8 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import mx.itson.reprobarnoesopcion.entidades.Logica;
+import static mx.itson.reprobarnoesopcion.entidades.Logica.eliminarModelo;
+import static mx.itson.reprobarnoesopcion.entidades.Logica.transferirModeloAVendido;
 import static mx.itson.reprobarnoesopcion.ui.Main.pnlJFrames;
 
 /**
@@ -163,9 +165,11 @@ public class Buscar extends javax.swing.JPanel {
     private void pnlVendidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVendidoMouseClicked
         Logica logica = new Logica();
         
-        logica.eliminarModelo();
+        eliminarModelo();
         logica.mostrarBuscar();
         
+        transferirModeloAVendido();
+        logica.mostrarVendido();
     }//GEN-LAST:event_pnlVendidoMouseClicked
 
     public void buscarModelo(String buscar){

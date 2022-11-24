@@ -12,6 +12,8 @@ import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.lang.String;
 import java.sql.SQLException;
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -114,7 +116,7 @@ public class Logica {
      * @param tipo
      * @param sexo
      * @param precio
-     * @return 
+     * @return retorna si se ejecutó la actualizacion en la base de datos.
      */
     public static boolean guardar(String modelo, String color, int numero, String tipo, String sexo, int precio){
         boolean resultado = false;
@@ -139,6 +141,9 @@ public class Logica {
         return resultado;
     }
     
+    /**
+     * 
+     */
     public static void eliminarModelo(){
         
         try {
@@ -168,6 +173,25 @@ public class Logica {
             JOptionPane.showMessageDialog(null, "Selecciona un modelo");
         }
         
+    }
+    
+    public static void transferirModeloAVendido(){
+        try {
+            
+            int filaSeleccionada = Buscar.tblBuscar.getSelectedRow();
+            Connection conexion = Conexion.obtener();
+            Statement statement = conexion.createStatement();
+            
+            int n = statement.executeUpdate("INSERT INTO almacen.vendido(Modelo, Color, Numero, Tipo, Sexo, Precio) SELECT (Modelo, Color, Numero, Tipo, Sexo, Precio) FROM "
+                    + "almacen.buscar WHERE Modelo=" + Buscar.tblBuscar.getValueAt(filaSeleccionada,0));
+            
+            if (n >= 0) {
+                System.out.println("Modelo transferido a vendido");
+            }
+            
+        } catch (Exception e) {
+            System.out.println("Ocurrio un error al intentar transferir el modelo: " + e);
+        }
     }
     
     /**
@@ -226,6 +250,22 @@ public class Logica {
         }
          return modelo;
      
+    }
+    
+    public void totalizar(){
+        double total = 0;
+        double precio = 0;
+        Locale local = new Locale("es", "MX");
+        NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(local);
+        
+        if(Vendido.tblVendido.getRowCount() > 0){
+            for(int i = 0; i < Vendido.tblVendido.getRowCount(); i++){
+                precio = Double.parseDouble(Vendido.tblVendido.getValueAt(i, 5).toString());
+                total += precio;
+            }
+            
+            Vendido.lblVentaTotal.setText(formatoMoneda.format(total));
+        }
     }
     
     //getter and setters de variables
