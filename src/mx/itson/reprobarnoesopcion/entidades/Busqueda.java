@@ -11,7 +11,10 @@ import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 import mx.itson.reprobarnoesopcion.persistencia.Conexion;
+import mx.itson.reprobarnoesopcion.ui.Buscar;
 
 /**
  *
@@ -25,37 +28,39 @@ public class Busqueda {
     private String tipo;
     private String sexo;
     private int precio;
+    DefaultTableModel model1;
     
     /**
      * 
-     * @return 
      */
-    public List<Busqueda> obtenerTodos(){
-        List<Busqueda> busquedas = new ArrayList<>();
+    public void obtenerTodos(){
+        
+        String consulta = "SELECT * FROM almacen.buscar";
+        
         try {
             
             Connection conexion = Conexion.obtener();
             Statement statement = conexion.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT modelo, color, numero, tipo, sexo, precio FROM buscar");
+            ResultSet resultSet = statement.executeQuery(consulta);
+            
+            Object[] busqueda = new Object[6];
+            model1 = (DefaultTableModel) Buscar.tblBuscar.getModel();
             
             while(resultSet.next()){
-                Busqueda busqueda = new Busqueda();
-                busqueda.setModelo(resultSet.getString(1));
-                busqueda.setColor(resultSet.getString(2));
-                busqueda.setNumero(resultSet.getInt(3));
-                busqueda.setTipo(resultSet.getString(4));
-                busqueda.setSexo(resultSet.getString(5));
-                busqueda.setPrecio(resultSet.getInt(6));
+                busqueda [0] = resultSet.getString("Modelo");
+                busqueda [1] = resultSet.getString("Color");
+                busqueda [2] = resultSet.getInt("Numero");
+                busqueda [3] = resultSet.getString("Tipo");
+                busqueda [4] = resultSet.getString("Sexo");
+                busqueda [5] = resultSet.getInt("Precio");
                 
-                busquedas.add(busqueda);
-                
-                conexion.close();
+                model1.addRow(busqueda);
             }
+            Buscar.tblBuscar.setModel(model1);
             
         } catch (Exception e) {
             System.out.println("Ocurrio un error: " + e.getMessage());
         }
-        return busquedas;
     }
     
     /**
@@ -68,21 +73,22 @@ public class Busqueda {
      * @param precio
      * @return 
      */
-    public boolean guardar(String modelo, String color, int numero, String tipo, String sexo, int precio){
+    public static boolean guardar(String modelo, String color, int numero, String tipo, String sexo, int precio){
         boolean resultado = false;
         try {
+            
+           String consulta = "INSERT INTO almacen.buscar (Modelo, Color, Numero, Tipo, Sexo, Precio) VALUES (?, ?, ?, ?, ?, ?)";
            Connection conexion = Conexion.obtener();
-           String consulta = "INSERT INTO buscar (modelo, color, numero, tipo, sexo, precio) VALUES(?, ?, ?, ?, ?, ?)";
-           PreparedStatement statement = conexion.prepareStatement(consulta);
+           PreparedStatement statement = conexion.prepareStatement(consulta, Statement.RETURN_GENERATED_KEYS);
            statement.setString(1, modelo);
            statement.setString(2, color);
            statement.setInt(3, numero);
            statement.setString(4, tipo);
            statement.setString(5, sexo);
            statement.setInt(6, precio);
+           statement.executeUpdate();
            
            resultado = statement.getUpdateCount() == 1;
-           conexion.close();
            
         } catch (Exception e) {
             System.out.println("Ocurrio un error al agregar la fila: " + e);

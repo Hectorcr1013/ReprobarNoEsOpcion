@@ -6,6 +6,10 @@ package mx.itson.reprobarnoesopcion.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.text.NumberFormat;
+import java.util.Locale;
+import javax.swing.JOptionPane;
+import mx.itson.reprobarnoesopcion.entidades.Busqueda;
 import static mx.itson.reprobarnoesopcion.ui.Main.pnlJFrames;
 
 /**
@@ -43,7 +47,7 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbxSexo = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         txfPrecio = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
@@ -123,9 +127,9 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         jLabel4.setText("Sexo");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, 60, 20));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dama", "Caballero", "Unisex" }));
-        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 90, -1));
+        cbxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dama", "Caballero", "Unisex" }));
+        cbxSexo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add(cbxSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 90, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
@@ -155,6 +159,9 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         pnlAnadirSeleccionado.setBackground(new java.awt.Color(21, 101, 192));
         pnlAnadirSeleccionado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnlAnadirSeleccionado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlAnadirSeleccionadoMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 pnlAnadirSeleccionadoMouseEntered(evt);
             }
@@ -291,10 +298,48 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
         
     }//GEN-LAST:event_pnlAtrasMouseClicked
 
+    private void pnlAnadirSeleccionadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAnadirSeleccionadoMouseClicked
+        
+         Locale local = new Locale("es", "MX");
+         NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(local);
+        
+        String mod = txfModelo.getText().toLowerCase();
+        String col = txfColor.getText().toUpperCase();
+        String num = txfNumero.getText();
+        String sex = cbxSexo.getSelectedItem().toString();
+        String pre = txfPrecio.getText();
+        String tip = cbxTipo.getSelectedItem().toString();
+        
+        try {
+            if(mod.equals("") || mod.equals("Ingresa el modelo") || 
+                    num.equals("") || num.equals("Ingresa el numero") || 
+                    col.equals("") || col.equals("Ingresa el color") || 
+                    pre.equals("") || pre.equals("Ingresa el precio")){
+                JOptionPane.showMessageDialog(null,"Faltan ingresar datos");
+            } else {
+                
+                Busqueda.guardar(mod, col, Integer.parseInt(num), tip, sex, Integer.parseInt(pre));
+                JOptionPane.showMessageDialog(null,"Modelo añadido");
+                Buscar p3 = new Buscar();
+                p3.setSize(730, 420);
+                p3.setLocation(0,0);
+        
+                pnlJFrames.removeAll();
+                pnlJFrames.add(p3, BorderLayout.CENTER);
+                pnlJFrames.revalidate();
+                pnlJFrames.repaint();
+                
+            }
+        } catch (Exception e) {
+            System.out.println("No se pudo agregar la fila: " + e);
+        }
+        
+    }//GEN-LAST:event_pnlAnadirSeleccionadoMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbxSexo;
     public static javax.swing.JComboBox<String> cbxTipo;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

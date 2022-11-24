@@ -22,7 +22,8 @@ public class Conexion {
         Connection conexion = null;
         
         try {
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/ReprobarNoEsOpcion", "root", "1323");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/almacen", "root", "1323");
+            System.out.println("Conexion exitosa");
         } catch (Exception e) {
             System.out.println("Ocurrio un error al conectar a la base de datos: "+e);
         }

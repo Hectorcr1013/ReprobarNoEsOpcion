@@ -31,19 +31,9 @@ public class Vendido extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblVendido = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         lblVentaDia = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        lblVentaMes = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        lblVentaAnual = new javax.swing.JLabel();
-        pnlVentaDia = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        pnlVentaAnual = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        pnlVentaMes = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -56,7 +46,7 @@ public class Vendido extends javax.swing.JPanel {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/Logo zapateria von azul.png"))); // NOI18N
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 155, 36));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblVendido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -67,139 +57,27 @@ public class Vendido extends javax.swing.JPanel {
                 "Modelo", "Color", "Numero", "Tipo", "Sexo", "Precio"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblVendido);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 670, 190));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Ventas del día:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 100, 20));
+        jLabel2.setText("Ventas  totales:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 140, 20));
 
-        lblVentaDia.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblVentaDia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblVentaDia.setForeground(new java.awt.Color(0, 0, 0));
-        add(lblVentaDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 100, 20));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Venta del mes:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 100, -1));
-
-        lblVentaMes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblVentaMes.setForeground(new java.awt.Color(0, 0, 0));
-        add(lblVentaMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 100, 20));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Venta anual:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 360, 90, -1));
-
-        lblVentaAnual.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblVentaAnual.setForeground(new java.awt.Color(0, 0, 0));
-        add(lblVentaAnual, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 90, 20));
-
-        pnlVentaDia.setBackground(new java.awt.Color(18, 90, 173));
-        pnlVentaDia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnlVentaDia.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pnlVentaDiaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pnlVentaDiaMouseExited(evt);
-            }
-        });
-        pnlVentaDia.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Venta del día");
-        pnlVentaDia.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 20));
-
-        add(pnlVentaDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 90, 20));
-
-        pnlVentaAnual.setBackground(new java.awt.Color(18, 90, 173));
-        pnlVentaAnual.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pnlVentaAnualMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pnlVentaAnualMouseExited(evt);
-            }
-        });
-        pnlVentaAnual.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Venta anual");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnlVentaAnual.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 20));
-
-        add(pnlVentaAnual, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 90, 20));
-
-        pnlVentaMes.setBackground(new java.awt.Color(18, 90, 173));
-        pnlVentaMes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pnlVentaMesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pnlVentaMesMouseExited(evt);
-            }
-        });
-        pnlVentaMes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Venta del mes");
-        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnlVentaMes.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 20));
-
-        add(pnlVentaMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 90, 20));
+        add(lblVentaDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 100, 20));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void pnlVentaDiaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVentaDiaMouseEntered
-        pnlVentaDia.setBackground(new Color(21,101,192));
-    }//GEN-LAST:event_pnlVentaDiaMouseEntered
-
-    private void pnlVentaDiaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVentaDiaMouseExited
-        pnlVentaDia.setBackground(new Color(18,90,173));
-    }//GEN-LAST:event_pnlVentaDiaMouseExited
-
-    private void pnlVentaAnualMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVentaAnualMouseEntered
-        pnlVentaAnual.setBackground(new Color(21,101,192));
-    }//GEN-LAST:event_pnlVentaAnualMouseEntered
-
-    private void pnlVentaAnualMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVentaAnualMouseExited
-        pnlVentaAnual.setBackground(new Color(18,90,173));
-    }//GEN-LAST:event_pnlVentaAnualMouseExited
-
-    private void pnlVentaMesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVentaMesMouseEntered
-        pnlVentaMes.setBackground(new Color(21,101,192));
-    }//GEN-LAST:event_pnlVentaMesMouseEntered
-
-    private void pnlVentaMesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVentaMesMouseExited
-        pnlVentaMes.setBackground(new Color(18,90,173));
-    }//GEN-LAST:event_pnlVentaMesMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JLabel lblVentaAnual;
     private javax.swing.JLabel lblVentaDia;
-    private javax.swing.JLabel lblVentaMes;
-    private javax.swing.JPanel pnlVentaAnual;
-    private javax.swing.JPanel pnlVentaDia;
-    private javax.swing.JPanel pnlVentaMes;
+    private javax.swing.JTable tblVendido;
     // End of variables declaration//GEN-END:variables
 }

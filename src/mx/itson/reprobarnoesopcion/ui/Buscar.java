@@ -5,6 +5,7 @@
 package mx.itson.reprobarnoesopcion.ui;
 
 import java.awt.Color;
+import mx.itson.reprobarnoesopcion.entidades.Busqueda;
 
 /**
  *
@@ -17,6 +18,8 @@ public class Buscar extends javax.swing.JPanel {
      */
     public Buscar() {
         initComponents();
+        Busqueda busqueda = new Busqueda();
+        busqueda.obtenerTodos();
     }
 
     /**
@@ -34,15 +37,15 @@ public class Buscar extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblBuscar = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Buscar");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 160, 40));
+        jLabel1.setText("Buscar en inventario");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 480, 40));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/Logo zapateria von azul.png"))); // NOI18N
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 155, 36));
@@ -61,7 +64,7 @@ public class Buscar extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/buscar (1).png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 30, 30));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblBuscar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -72,7 +75,12 @@ public class Buscar extends javax.swing.JPanel {
                 "Modelo", "Color", "Numero", "Tipo", "Sexo", "Precio"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblBuscar);
+        if (tblBuscar.getColumnModel().getColumnCount() > 0) {
+            tblBuscar.getColumnModel().getColumn(0).setResizable(false);
+            tblBuscar.getColumnModel().getColumn(3).setResizable(false);
+            tblBuscar.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 670, 250));
     }// </editor-fold>//GEN-END:initComponents
@@ -92,7 +100,7 @@ public class Buscar extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
+    public static javax.swing.JTable tblBuscar;
     private javax.swing.JTextField txfBuscar;
     // End of variables declaration//GEN-END:variables
 }

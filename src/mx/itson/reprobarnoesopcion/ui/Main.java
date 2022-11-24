@@ -8,6 +8,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.time.LocalDate;
 import javax.swing.JPanel;
+import mx.itson.reprobarnoesopcion.entidades.Busqueda;
 import mx.itson.reprobarnoesopcion.persistencia.Conexion;
 
 /**
@@ -26,7 +27,6 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
-        Conexion.obtener();
         setLocationRelativeTo(null);
         
         LocalDate hoy = LocalDate.now();
