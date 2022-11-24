@@ -4,14 +4,13 @@
  */
 package mx.itson.reprobarnoesopcion.entidades;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
-import java.util.Vector;
+import java.lang.String;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import mx.itson.reprobarnoesopcion.persistencia.Conexion;
 import mx.itson.reprobarnoesopcion.ui.Buscar;
@@ -20,7 +19,7 @@ import mx.itson.reprobarnoesopcion.ui.Buscar;
  *
  * @author Hector
  */
-public class Busqueda {
+public class Logica {
 
     private String modelo;
     private String color;
@@ -94,6 +93,59 @@ public class Busqueda {
             System.out.println("Ocurrio un error al agregar la fila: " + e);
         }
         return resultado;
+    }
+    
+    public DefaultTableModel buscar(String buscar){
+        
+        String [] nombresColumnas = {"Modelo", "Color", "Numero", "Tipo", "Sexo", "Precio"};
+        String [] registros = new String[6];
+        DefaultTableModel modelo = new DefaultTableModel(null, nombresColumnas);
+        String consulta = "SELECT * FROM almacen.buscar WHERE Modelo LIKE '%"+buscar+"%'";
+        
+        Connection cn = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;                           
+
+        try
+        {
+            cn = Conexion.obtener();
+            pst = cn.prepareStatement(consulta);
+            rs = pst.executeQuery();
+
+            while(rs.next())
+            {
+                registros[0] = rs.getString("Modelo");
+                registros[1] = rs.getString("Color");
+                registros[2] = rs.getString("Numero");      
+                registros[3] = rs.getString("Tipo");
+                registros[4] = rs.getString("Sexo");
+                registros[5] = rs.getString("Precio");
+
+                modelo.addRow(registros);
+
+            }                      
+        }
+        catch(Exception e)
+        {
+            System.out.println("Ocurrio un error: " + e);
+        }
+        finally
+        {
+            try
+            {
+                if (rs != null) rs.close();
+
+                if (pst != null) pst.close();
+
+                if (cn != null) cn.close();
+            }
+            catch(Exception e)
+            {
+                System.out.println("Ocurrio un error: " + e);
+            }
+        }
+         return modelo;
+     
     }
     
     /**

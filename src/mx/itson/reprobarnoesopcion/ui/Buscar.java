@@ -5,7 +5,8 @@
 package mx.itson.reprobarnoesopcion.ui;
 
 import java.awt.Color;
-import mx.itson.reprobarnoesopcion.entidades.Busqueda;
+import javax.swing.table.DefaultTableModel;
+import mx.itson.reprobarnoesopcion.entidades.Logica;
 
 /**
  *
@@ -18,7 +19,7 @@ public class Buscar extends javax.swing.JPanel {
      */
     public Buscar() {
         initComponents();
-        Busqueda busqueda = new Busqueda();
+        Logica busqueda = new Logica();
         busqueda.obtenerTodos();
     }
 
@@ -58,6 +59,11 @@ public class Buscar extends javax.swing.JPanel {
                 txfBuscarMousePressed(evt);
             }
         });
+        txfBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txfBuscarKeyReleased(evt);
+            }
+        });
         add(txfBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 170, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 170, 10));
 
@@ -93,6 +99,19 @@ public class Buscar extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_txfBuscarMousePressed
 
+    private void txfBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txfBuscarKeyReleased
+        buscarModelo(txfBuscar.getText());
+    }//GEN-LAST:event_txfBuscarKeyReleased
+
+    public void buscarModelo(String buscar){
+        
+        Logica logica = new Logica();
+        DefaultTableModel modelo = logica.buscar(buscar);
+        
+        tblBuscar.setModel(modelo);
+        
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

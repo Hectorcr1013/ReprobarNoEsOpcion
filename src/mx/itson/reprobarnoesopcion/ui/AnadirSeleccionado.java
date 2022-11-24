@@ -9,7 +9,7 @@ import java.awt.Color;
 import java.text.NumberFormat;
 import java.util.Locale;
 import javax.swing.JOptionPane;
-import mx.itson.reprobarnoesopcion.entidades.Busqueda;
+import mx.itson.reprobarnoesopcion.entidades.Logica;
 import static mx.itson.reprobarnoesopcion.ui.Main.pnlJFrames;
 
 /**
@@ -318,7 +318,7 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null,"Faltan ingresar datos");
             } else {
                 
-                Busqueda.guardar(mod, col, Integer.parseInt(num), tip, sex, Integer.parseInt(pre));
+                Logica.guardar(mod, col, Integer.parseInt(num), tip, sex, Integer.parseInt(pre));
                 JOptionPane.showMessageDialog(null,"Modelo añadido");
                 Buscar p3 = new Buscar();
                 p3.setSize(730, 420);

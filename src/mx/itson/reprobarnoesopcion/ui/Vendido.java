@@ -33,7 +33,7 @@ public class Vendido extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblVendido = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        lblVentaDia = new javax.swing.JLabel();
+        lblVentaTotal = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -66,9 +66,9 @@ public class Vendido extends javax.swing.JPanel {
         jLabel2.setText("Ventas  totales:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 140, 20));
 
-        lblVentaDia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblVentaDia.setForeground(new java.awt.Color(0, 0, 0));
-        add(lblVentaDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 100, 20));
+        lblVentaTotal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblVentaTotal.setForeground(new java.awt.Color(0, 0, 0));
+        add(lblVentaTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 100, 20));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -77,7 +77,7 @@ public class Vendido extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblVentaDia;
+    private javax.swing.JLabel lblVentaTotal;
     private javax.swing.JTable tblVendido;
     // End of variables declaration//GEN-END:variables
 }

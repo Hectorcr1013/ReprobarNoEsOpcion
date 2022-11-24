@@ -8,7 +8,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.time.LocalDate;
 import javax.swing.JPanel;
-import mx.itson.reprobarnoesopcion.entidades.Busqueda;
+import mx.itson.reprobarnoesopcion.entidades.Logica;
 import mx.itson.reprobarnoesopcion.persistencia.Conexion;
 
 /**
@@ -430,6 +430,7 @@ public class Main extends javax.swing.JFrame {
         pnlJFrames.add(p3, BorderLayout.CENTER);
         pnlJFrames.revalidate();
         pnlJFrames.repaint();
+        
     }//GEN-LAST:event_pnlBuscarMouseClicked
 
     private void pnlAnadirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAnadirMouseExited
