@@ -5,6 +5,9 @@
 package mx.itson.reprobarnoesopcion.ui;
 
 import java.awt.Color;
+import java.text.NumberFormat;
+import java.util.Locale;
+import mx.itson.reprobarnoesopcion.entidades.Logica;
 
 /**
  *
@@ -17,6 +20,14 @@ public class Vendido extends javax.swing.JPanel {
      */
     public Vendido() {
         initComponents();
+        
+        Logica logica = new Logica();
+        logica.mostrarVendido();
+        
+        Locale local = new Locale("es", "MX");
+        NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(local);
+        
+        //lblVentaTotal.setText(formatoMoneda.format());
     }
 
     /**
@@ -78,6 +89,6 @@ public class Vendido extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblVentaTotal;
-    private javax.swing.JTable tblVendido;
+    public static javax.swing.JTable tblVendido;
     // End of variables declaration//GEN-END:variables
 }

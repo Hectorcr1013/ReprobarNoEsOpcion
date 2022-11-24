@@ -5,15 +5,22 @@
 package mx.itson.reprobarnoesopcion.entidades;
 
 
+import java.awt.BorderLayout;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.lang.String;
+import java.sql.SQLException;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import mx.itson.reprobarnoesopcion.persistencia.Conexion;
 import mx.itson.reprobarnoesopcion.ui.Buscar;
+import static mx.itson.reprobarnoesopcion.ui.Main.pnlJFrames;
+import mx.itson.reprobarnoesopcion.ui.Vendido;
 
 /**
  *
@@ -27,35 +34,72 @@ public class Logica {
     private String tipo;
     private String sexo;
     private int precio;
-    DefaultTableModel model1;
+    DefaultTableModel model2;
     
     /**
      * 
      */
-    public void obtenerTodos(){
+    public void mostrarBuscar(){
         
         String consulta = "SELECT * FROM almacen.buscar";
         
         try {
             
+            String[] nombreColumnas = {"Modelo", "Color", "Numero", "Tipo", "Sexo", "Precio"};
+            String[] registros = new String[6];
+            
+            DefaultTableModel model1 = new DefaultTableModel(null, nombreColumnas);
+            
             Connection conexion = Conexion.obtener();
             Statement statement = conexion.createStatement();
             ResultSet resultSet = statement.executeQuery(consulta);
             
-            Object[] busqueda = new Object[6];
-            model1 = (DefaultTableModel) Buscar.tblBuscar.getModel();
-            
             while(resultSet.next()){
-                busqueda [0] = resultSet.getString("Modelo");
-                busqueda [1] = resultSet.getString("Color");
-                busqueda [2] = resultSet.getInt("Numero");
-                busqueda [3] = resultSet.getString("Tipo");
-                busqueda [4] = resultSet.getString("Sexo");
-                busqueda [5] = resultSet.getInt("Precio");
+                registros [0] = resultSet.getString("Modelo");
+                registros [1] = resultSet.getString("Color");
+                registros [2] = resultSet.getString("Numero");
+                registros [3] = resultSet.getString("Tipo");
+                registros [4] = resultSet.getString("Sexo");
+                registros [5] = resultSet.getString("Precio");
                 
-                model1.addRow(busqueda);
+                model1.addRow(registros);
             }
             Buscar.tblBuscar.setModel(model1);
+            
+        } catch (Exception e) {
+            System.out.println("Ocurrio un error: " + e.getMessage());
+        }
+    }
+    
+    /**
+     * 
+     */
+    public void mostrarVendido(){
+        
+        String consulta = "SELECT * FROM almacen.vendido";
+        
+        try {
+            
+            String[] nombreColumnas = {"Modelo", "Color", "Numero", "Tipo", "Sexo", "Precio"};
+            String[] registros = new String[6];
+            
+            DefaultTableModel model2 = new DefaultTableModel(null, nombreColumnas);
+            
+            Connection conexion = Conexion.obtener();
+            Statement statement = conexion.createStatement();
+            ResultSet resultSet = statement.executeQuery(consulta);
+            
+            while(resultSet.next()){
+                registros [0] = resultSet.getString("Modelo");
+                registros [1] = resultSet.getString("Color");
+                registros [2] = resultSet.getString("Numero");
+                registros [3] = resultSet.getString("Tipo");
+                registros [4] = resultSet.getString("Sexo");
+                registros [5] = resultSet.getString("Precio");
+                
+                model2.addRow(registros);
+            }
+            Vendido.tblVendido.setModel(model2);
             
         } catch (Exception e) {
             System.out.println("Ocurrio un error: " + e.getMessage());
@@ -95,12 +139,48 @@ public class Logica {
         return resultado;
     }
     
+    public static void eliminarModelo(){
+        
+        try {
+            
+            int filaSeleccionada = Buscar.tblBuscar.getSelectedRow();
+            String consulta = "DELETE FROM almacen.buscar WHERE Modelo=" + Buscar.tblBuscar.getValueAt(filaSeleccionada,0);
+            Connection conexion = Conexion.obtener();
+            Statement statement = conexion.createStatement();
+            
+            int n = statement.executeUpdate(consulta);
+            
+            if (n >= 0) {
+                System.out.println("Modelo eliminado de tabla buscar");
+            }
+            
+            Vendido p4 = new Vendido();
+            p4.setSize(730, 420);
+            p4.setLocation(0,0);
+        
+            pnlJFrames.removeAll();
+            pnlJFrames.add(p4, BorderLayout.CENTER);
+            pnlJFrames.revalidate();
+            pnlJFrames.repaint();
+            
+        } catch (Exception e) {
+            System.out.println("Ocurrio un error al intentar elminiar el modelo: " + e);
+            JOptionPane.showMessageDialog(null, "Selecciona un modelo");
+        }
+        
+    }
+    
+    /**
+     * 
+     * @param buscar
+     * @return 
+     */
     public DefaultTableModel buscar(String buscar){
         
         String [] nombresColumnas = {"Modelo", "Color", "Numero", "Tipo", "Sexo", "Precio"};
         String [] registros = new String[6];
         DefaultTableModel modelo = new DefaultTableModel(null, nombresColumnas);
-        String consulta = "SELECT * FROM almacen.buscar WHERE Modelo LIKE '%"+buscar+"%'";
+        String consulta = "SELECT * FROM almacen.buscar WHERE Modelo LIKE '%"+buscar+"%' OR color LIKE '%"+buscar+"%' OR Numero LIKE '%"+buscar+"%' OR Tipo LIKE '%"+buscar+"%' OR Sexo LIKE '%"+buscar+"%' OR Precio LIKE '%"+buscar+"%'";
         
         Connection cn = null;
         PreparedStatement pst = null;
@@ -147,6 +227,8 @@ public class Logica {
          return modelo;
      
     }
+    
+    //getter and setters de variables
     
     /**
      * @return the modelo

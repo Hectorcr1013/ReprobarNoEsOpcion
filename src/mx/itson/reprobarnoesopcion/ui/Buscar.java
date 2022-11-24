@@ -4,9 +4,12 @@
  */
 package mx.itson.reprobarnoesopcion.ui;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import mx.itson.reprobarnoesopcion.entidades.Logica;
+import static mx.itson.reprobarnoesopcion.ui.Main.pnlJFrames;
 
 /**
  *
@@ -14,13 +17,17 @@ import mx.itson.reprobarnoesopcion.entidades.Logica;
  */
 public class Buscar extends javax.swing.JPanel {
 
+    DefaultTableModel tableModel;
+    
     /**
      * Creates new form Buscar
      */
     public Buscar() {
         initComponents();
-        Logica busqueda = new Logica();
-        busqueda.obtenerTodos();
+        
+        Logica logica = new Logica();
+        logica.mostrarBuscar();
+        
     }
 
     /**
@@ -39,6 +46,8 @@ public class Buscar extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblBuscar = new javax.swing.JTable();
+        pnlVendido = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -52,11 +61,20 @@ public class Buscar extends javax.swing.JPanel {
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 155, 36));
 
         txfBuscar.setBackground(new java.awt.Color(255, 255, 255));
-        txfBuscar.setText("Ingresa el modelo a buscar");
+        txfBuscar.setForeground(new java.awt.Color(153, 153, 153));
+        txfBuscar.setText("Modelo/Color/Numero/Tipo/Sexo/Precio");
         txfBuscar.setBorder(null);
         txfBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txfBuscarMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txfBuscarMousePressed(evt);
+            }
+        });
+        txfBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txfBuscarActionPerformed(evt);
             }
         });
         txfBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -64,11 +82,11 @@ public class Buscar extends javax.swing.JPanel {
                 txfBuscarKeyReleased(evt);
             }
         });
-        add(txfBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 170, -1));
-        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 170, 10));
+        add(txfBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 230, -1));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 220, 10));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/reprobarnoesopcion/imagenes/buscar (1).png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 30, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 30, 30));
 
         tblBuscar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -89,19 +107,66 @@ public class Buscar extends javax.swing.JPanel {
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 670, 250));
+
+        pnlVendido.setBackground(new java.awt.Color(21, 101, 192));
+        pnlVendido.setForeground(new java.awt.Color(21, 101, 192));
+        pnlVendido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlVendido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlVendidoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlVendidoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlVendidoMouseExited(evt);
+            }
+        });
+        pnlVendido.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Vendido");
+        pnlVendido.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        add(pnlVendido, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, 80, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txfBuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txfBuscarMousePressed
-        if(txfBuscar.getText().equals("Ingresa el modelo a buscar")){
+        if(txfBuscar.getText().equals("Modelo/Color/Numero/Tipo/Sexo/Precio")){
             txfBuscar.setText("");
             txfBuscar.setForeground(Color.BLACK);
-            
-        }
+        } 
     }//GEN-LAST:event_txfBuscarMousePressed
 
     private void txfBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txfBuscarKeyReleased
         buscarModelo(txfBuscar.getText());
     }//GEN-LAST:event_txfBuscarKeyReleased
+
+    private void txfBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txfBuscarActionPerformed
+
+    private void txfBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txfBuscarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txfBuscarMouseClicked
+
+    private void pnlVendidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVendidoMouseEntered
+        pnlVendido.setBackground(new Color(21,101,192));
+    }//GEN-LAST:event_pnlVendidoMouseEntered
+
+    private void pnlVendidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVendidoMouseExited
+        pnlVendido.setBackground(new Color(18,90,173));
+    }//GEN-LAST:event_pnlVendidoMouseExited
+
+    private void pnlVendidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVendidoMouseClicked
+        Logica logica = new Logica();
+        
+        logica.eliminarModelo();
+        logica.mostrarBuscar();
+        
+    }//GEN-LAST:event_pnlVendidoMouseClicked
 
     public void buscarModelo(String buscar){
         
@@ -112,13 +177,16 @@ public class Buscar extends javax.swing.JPanel {
         
     }
     
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel pnlVendido;
     public static javax.swing.JTable tblBuscar;
     private javax.swing.JTextField txfBuscar;
     // End of variables declaration//GEN-END:variables

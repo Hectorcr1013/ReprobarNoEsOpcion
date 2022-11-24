@@ -299,10 +299,7 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
     }//GEN-LAST:event_pnlAtrasMouseClicked
 
     private void pnlAnadirSeleccionadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAnadirSeleccionadoMouseClicked
-        
-         Locale local = new Locale("es", "MX");
-         NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(local);
-        
+     
         String mod = txfModelo.getText().toLowerCase();
         String col = txfColor.getText().toUpperCase();
         String num = txfNumero.getText();
@@ -320,6 +317,7 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
                 
                 Logica.guardar(mod, col, Integer.parseInt(num), tip, sex, Integer.parseInt(pre));
                 JOptionPane.showMessageDialog(null,"Modelo añadido");
+                
                 Buscar p3 = new Buscar();
                 p3.setSize(730, 420);
                 p3.setLocation(0,0);
@@ -328,6 +326,7 @@ public class AnadirSeleccionado extends javax.swing.JPanel {
                 pnlJFrames.add(p3, BorderLayout.CENTER);
                 pnlJFrames.revalidate();
                 pnlJFrames.repaint();
+                
                 
             }
         } catch (Exception e) {
