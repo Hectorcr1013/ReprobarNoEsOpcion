@@ -182,8 +182,7 @@ public class Logica {
             Connection conexion = Conexion.obtener();
             Statement statement = conexion.createStatement();
             
-            int n = statement.executeUpdate("INSERT INTO almacen.vendido(Modelo, Color, Numero, Tipo, Sexo, Precio) SELECT (Modelo, Color, Numero, Tipo, Sexo, Precio) FROM "
-                    + "almacen.buscar WHERE Modelo=" + Buscar.tblBuscar.getValueAt(filaSeleccionada,0));
+            int n = statement.executeUpdate("INSERT INTO almacen.vendido(Modelo, Color, Numero, Tipo, Sexo, Precio) SELECT Modelo, Color, Numero, Tipo, Sexo, Precio FROM almacen.buscar WHERE (Modelo=" + Buscar.tblBuscar.getValueAt(filaSeleccionada,0)+")");
             
             if (n >= 0) {
                 System.out.println("Modelo transferido a vendido");

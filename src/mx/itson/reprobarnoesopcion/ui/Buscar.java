@@ -165,10 +165,8 @@ public class Buscar extends javax.swing.JPanel {
     private void pnlVendidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlVendidoMouseClicked
         Logica logica = new Logica();
         
-        eliminarModelo();
-        logica.mostrarBuscar();
-        
         transferirModeloAVendido();
+        eliminarModelo();
         logica.mostrarVendido();
     }//GEN-LAST:event_pnlVendidoMouseClicked
 
